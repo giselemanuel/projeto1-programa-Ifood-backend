@@ -153,7 +153,6 @@ def escolher_avatar():
                     elif op == "N":
                         encerrar_jogo()
                         break
-            break
         elif personagem == 2:
             personagem = 'Denise'
             print('Olá, eu sou a Denise !\n'
