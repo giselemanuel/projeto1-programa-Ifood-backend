@@ -117,6 +117,9 @@ def escolher_avatar():
             limpar_tela()
             if op == "S":
                 conteudo_fase_um(personagem)
+            elif op == "N":
+                encerrar_jogo()
+                break
             elif op != "S":
                 while True:
                     print(f'A opção {op} não existe.')
@@ -127,9 +130,6 @@ def escolher_avatar():
                     elif op == "N":
                         encerrar_jogo()
                         break
-            else:
-                encerrar_jogo()
-            break
         elif personagem == 1:
             personagem = 'Paulo'
             print('Olá, eu sou o Paulo !\n'
@@ -140,6 +140,9 @@ def escolher_avatar():
             limpar_tela()
             if op == "S":
                 conteudo_fase_um(personagem)
+            elif op == "N":
+                encerrar_jogo()
+                break
             elif op != "S":
                 while True:
                     print(f'A opção {op} não existe.')
@@ -150,8 +153,6 @@ def escolher_avatar():
                     elif op == "N":
                         encerrar_jogo()
                         break
-            else:
-                encerrar_jogo()
             break
         elif personagem == 2:
             personagem = 'Denise'
@@ -163,6 +164,9 @@ def escolher_avatar():
             limpar_tela()
             if op == "S":
                 conteudo_fase_um(personagem)
+            elif op == "N":
+                encerrar_jogo()
+                break
             elif op != "S":
                 while True:
                     print(f'A opção {op} não existe.')
@@ -173,15 +177,12 @@ def escolher_avatar():
                     elif op == "N":
                         encerrar_jogo()
                         break
-            else:
-                encerrar_jogo()
-            break
         elif personagem > 3:
             print(f"Personagem {personagem} não existe!")
+            print("Escolha uma opção da lista abaixo:")
 
 
 def conteudo_fase_um(avatar):
-    placar = 0
     limpar_tela()
     print('-' * 60)
     print(f'{"PRIMEIRA FASE - Introdução de Conceitos ":^60}')
@@ -198,16 +199,9 @@ def conteudo_fase_um(avatar):
     op = str(input("Topa um Quiz sobre este tema [S/N]: ")).upper()
     if op == "S":  # Quiz do tema DIVERSIDADE
         limpar_tela()
-        equiddade = str(input("A Diversidade pode ser de muitas orderns.\nEscolha uma alternativa que melhor represente a diversidade: \n[A] Física, Morais, Religosas, Culturais , Musicalidade.\n[B] Física, Morais, Religosas, Artística , Ideologicas.\n[C] Física, Morais, Temporal, Culturais , Ideologicas.\n[D] Física, Morais, Religosas, Culturais , Ideologicas.\nEscolha  uma  alternativa:")).upper()
-        if equiddade == "A":
-            print('Você errou!\nA alternativa correrta é a\n[D] Física, Morais, Religosas, Culturais')
-        elif equiddade == "B":
-            print('Você errou!\nA alternativa correrta é a\n[D] Física, Morais, Religosas, Culturais')
-        elif equiddade == "C":
-            print('Você errou!\nA alternativa correrta é a\n[D] Física, Morais, Religosas, Culturais')
-        if equiddade == "D":
-            placar += 10
-            print(f'Você ACERTOU!O seu placar é de {placar} pontos.')
+        quiz_diversidade()
+    elif op == "N":
+        encerrar_jogo()
     elif op != "S":
         while True:
             print(f'A opção {op} não existe.')
@@ -222,21 +216,23 @@ def conteudo_fase_um(avatar):
 
     # apresentação do tema Grupo minoritários
     texto_grupo_minoritario = 'Olá Olá Olá'
-    op = str(input('\nVamos continuar?[S/N]: ')).upper()
+    op = str(input('Vamos continuar?[S/N]: ')).upper()
     limpar_tela()
     if op == 'S':
         print(f'{avatar} diz:')
         escrever(texto_grupo_minoritario)
     elif op != 'S':
         while True:
-            print(f'A opção {op} não existe.\n')
+            print(f'A opção {op} não existe.')
             op = str(input('Deseja continuar?[S/N]: ')).upper()
+            limpar_tela()
             if op == 'S':
                 print(f'{avatar} diz:')
                 escrever(texto_grupo_minoritario)
                 break
             elif op == 'N':
                 encerrar_jogo()
+                break
 
 
 def quiz_diversidade():
