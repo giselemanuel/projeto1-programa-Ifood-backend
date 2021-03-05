@@ -1,33 +1,11 @@
 """
 Nome : Gisele Manuel
-Objetivo: Criar um Jogo com as expecificações abaixo:
-Descrição:
-Fazer um jogo com vários finais baseados em escolhas.
-O jogo precisa ter mais de um final e precisa seguir este fluxo padrão:
-Fluxo: 1. Mostrar o texto explicando o cenário atual
-2. Fornecer opções de tomada de decisão
-3. Receber a escolha da pessoa usuária
-4. Se for um final de jogo, mostrar mensagem de fim de jogo (venceu, ganhou etc)
-e mostrar pelo menos uma única opção, que é a de jogar novamente
-5. Se não, voltar para o primeiro passo
-
-A história do jogo precisa ter:
-
-* Um tema específico : Diversidade
-* Enredo : E-learning
-* Título: Diversidadde e Equidade nas organizações
-* Locais diferentes (pelo menos 3)
-* Personagens diferentes (pelo menos 3)
-* Condições de vitória (pelo menos 2)
-* Condições de derrota (pelo menos 4)
-
-string = 'Python é vida'
-
-for letra in string:
-    time.sleep(0.10)
-    print(f'{letra}', end='')
-    time.sleep(0.10)
-
+Nome do Jogo: E-learning - Diversidade nas Organizações empresariais
+Descrição: A proposta deste e-learning é apresentar o tema Diversidade nas Organizações Empresariais.
+Falaremos dos conceitos sobre equidade, grupos minoritários, estruturas de opressões, grupo homogêneos,
+grupos heterogêneos e como a diversidade influência nos resultados e desempenho das organizações
+empresariais e seus impactos na sociedade. Todo conteúdo conta com um QUIZ para que essa jornada
+de conhecimento sobre o mundo da diversidade fique ainda mais interessante
 """
 import os
 import time
@@ -81,37 +59,41 @@ def imprime_mensagem_vencedor():
     print("         _.' '._        ")
     print("        '-------'       ")
 
+    continuar_jogo()
 
 # imprime mensagem quando o jogador perder
 
 
-#  def imprime_mensagem_perdedor():
-# print("Puxa, você foi enforcado!")
-#   print("    _______________        ")
-#    print("   /               \       ")
-#    print("  /                 \      ")
-#    print("//                   \/\   ")
-#    print("\|   XXXX     XXXX   | /   ")
-#    print(" |   XXXX     XXXX   |/    ")
-#    print(" |   XXX       XXX   |     ")
-#    print(" |                   |     ")
-#    print(" \__      XXX      __/     ")
-#    print("   |\     XXX     /|       ")
-#    print("   | |           | |       ")
-#    print("   | I I I I I I I |       ")
-#    print("   |  I I I I I I  |       ")
-#    print("   \_             _/       ")
-#   print("     \_         _/         ")
-#    print("       \_______/           ")
+def imprime_mensagem_perdedor():
+
+    print("   Puxa, você PERDEU!")
+    print("    _______________        ")
+    print("   /               \       ")
+    print("  /                 \      ")
+    print("//                   \/\   ")
+    print("\|   XXXX     XXXX   | /   ")
+    print(" |   XXXX     XXXX   |/    ")
+    print(" |   XXX       XXX   |     ")
+    print(" |                   |     ")
+    print(" \__      XXX      __/     ")
+    print("   |\     XXX     /|       ")
+    print("   | |           | |       ")
+    print("   | I I I I I I I |       ")
+    print("   |  I I I I I I  |       ")
+    print("   \_             _/       ")
+    print("     \_         _/         ")
+    print("       \_______/           ")
+
+    continuar_jogo()
 
 
 # cabeçalho do programa
 
 
 def cabecalho_programa():
-    print('-' * 81)
-    print(f'{"E-learning : DIVERSIDADE E EQUIDADE NAS ORGANIZAÇÕES":^81}')
-    print('-' * 81)
+    print('-' * 110)
+    print(f'{"E-learning : DIVERSIDADE E EQUIDADE NAS ORGANIZAÇÕES":^110}')
+    print('-' * 110)
 
 
 # cabeçalho da fase um
@@ -152,9 +134,9 @@ def introducao_jogo():
                             '\n' + 'heterogêneos e como a diversidade influência nos resultados e desempenho das organizações empresariais e ' + \
                             '\n' + 'seus impactos na sociedade. Todo contéudo conta com um QUIZ para que essa jornada de conhecimento sobre o ' + \
                             '\n' + 'mundo da diversidade fique ainda mais interessante.'
-    print('-' * 81)
+    print('-' * 110)
     print(texto_introducao_jogo)
-    print('-' * 81)
+    print('-' * 110)
 
 
 # função que pergunta ao usuário se ele deseja continuar o jogo e avança para  escolher um avatar
@@ -592,10 +574,10 @@ def conteudo_fase_tres(avatar):
     print(f'{avatar} diz:')
     texto_quiz = 'Parabéns,Você chegou na terceira fase, onde teremos um grande desafio com um QUIZ, com 10 perguntas.' + \
                  '\n' + 'REGRAS:' + \
-                 '\n' + 'Para vencer neste QUIZ é preciso fazer 80 pontos, teremos' + \
-                 '\n' + '4 Perguntas PERIGOSAS, você pontuará 10 pontos se acertar e -80 pontos se errar. ' + \
-                 '\n' + '2 Perguntas OURO, você pontuará 80 pontos em cada, ou seja acertando uma delas, você vencerá o QUIZ.' + \
-                 '\n' + '4 Perguntas PRATA, você pontuará 10 pontos em cada resposta certa.'
+                 '\n' + 'Neste QUIZ teremos' + \
+                 '\n' + '4 Perguntas PERIGOSAS, serão perguntas TUDO OU NADA, acerte e VENÇA, erre e PERCA ' + \
+                 '\n' + '6 Perguntas PRATA, serão perguntas que permitirão avançar para as próximas.' \
+
     print(texto_quiz)
     print('\n')
     sleep(1)
@@ -628,9 +610,8 @@ def conteudo_fase_tres(avatar):
 
 
 def quiz_diversidade():
-    pontos = 0
     limpar_tela()
-    pergunta1 = str(input("Escolha uma alternativa que melhor represente a DIVERSIDADE: \n[A] Física, Morais, Religosas, Culturais , Musicalidade.\n[B] Física, Morais, Religosas, Artística , Ideologicas.\n[C] Física, Morais, Temporal, Culturais , Ideologicas.\n[D] Física, Morais, Religosas, Culturais , Ideologicas.\nEscolha  uma  alternativa:")).upper()
+    pergunta1 = str(input("Escolha uma alternativa que melhor represente as origens da DIVERSIDADE: \n[A] Física, Morais, Religosas, Culturais , Musicalidade.\n[B] Física, Morais, Religosas, Artística , Ideologicas.\n[C] Física, Morais, Temporal, Culturais , Ideologicas.\n[D] Física, Morais, Religosas, Culturais , Ideologicas.\nEscolha  uma  alternativa:")).upper()
     if pergunta1 == "A":
         limpar_tela()
         print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Física, Morais, Religosas, Culturais\n')
@@ -642,8 +623,7 @@ def quiz_diversidade():
         print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Física, Morais, Religosas, Culturais\n')
     elif pergunta1 == "D":
         limpar_tela()
-        pontos += 10
-        print(f'Você ACERTOU!\nO seu placar é de {pontos} pontos.')
+        print(f'Você ACERTOU!\n')
 
     # Caso o usuário informe uma opção que não existe , o programa irá solicita a inserção até que ele informe uma opção existente
 
@@ -651,7 +631,7 @@ def quiz_diversidade():
         while True:
             limpar_tela()
             print(f'A opção {pergunta1} não exite. Tente novamente.\n')
-            pergunta1 = str(input("Escolha uma alternativa que melhor represente a DIVERSIDADE: \n[A] Física, Morais, Religosas, Culturais , Musicalidade.\n[B] Física, Morais, Religosas, Artística , Ideologicas.\n[C] Física, Morais, Temporal, Culturais , Ideologicas.\n[D] Física, Morais, Religosas, Culturais , Ideologicas.\nEscolha  uma  alternativa:")).upper()
+            pergunta1 = str(input("Escolha uma alternativa que melhor represente as origens da DIVERSIDADE: \n[A] Física, Morais, Religosas, Culturais , Musicalidade.\n[B] Física, Morais, Religosas, Artística , Ideologicas.\n[C] Física, Morais, Temporal, Culturais , Ideologicas.\n[D] Física, Morais, Religosas, Culturais , Ideologicas.\nEscolha  uma  alternativa:")).upper()
             if pergunta1 == "A":
                 limpar_tela()
                 print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Física, Morais, Religosas, Culturais')
@@ -666,8 +646,7 @@ def quiz_diversidade():
                 break
             elif pergunta1 == "D":
                 limpar_tela()
-                pontos += 10
-                print(f'Você ACERTOU!\nO seu placar é de {pontos} pontos.\n')
+                print(f'Você ACERTOU!\n')
                 break
 
 
@@ -675,14 +654,12 @@ def quiz_diversidade():
 
 
 def quiz_equidade():
-    eq_pontos = 0
     limpar_tela()
     pergunta2 = str(input(
         "Escolha uma alternativa que melhor represente a EQUIDADDE: \n[A] Equidade é adaptar  as oportunidades  deixando-as justas.\n[B] Desigualdade é o antônimo de equidade.\n[C] Equidade tem o mesmo significado que igualdade.\n[D] Equidade é dar as mesmas oportunidades..\nEscolha  uma  alternativa:")).upper()
     if pergunta2 == "A":
         limpar_tela()
-        eq_pontos += 10
-        print(f'Você ACERTOU!\nO seu placar é de {eq_pontos} pontos.')
+        print(f'Você ACERTOU!\n')
     elif pergunta2 == "B":
         limpar_tela()
         print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[A] Equidade é adaptar  as oportunidades  deixando-as justas\n')
@@ -703,8 +680,7 @@ def quiz_equidade():
                 "PERGUNTA SOBRE EQUIDADE.\nEscolha uma alternativa que melhor represente a EQUIDADDE: \n[A] ALTERNATIVA CERTA.\n[B] ALTERNATIVA ERRADA.\n[C] ALTERNATIVA ERRADA.\n[D] ALTERNATIVA ERRADA.\nEscolha  uma  alternativa:")).upper()
             if pergunta2 == "A":
                 limpar_tela()
-                eq_pontos += 10
-                print(f'Você ACERTOU!\nO seu placar é de {eq_pontos} pontos.')
+                print(f'Você ACERTOU!\n')
                 break
             elif pergunta2 == "B":
                 limpar_tela()
@@ -724,17 +700,14 @@ def quiz_equidade():
 
 
 def quiz_grupo_minoritario():
-    minoritario_pontos = 0
     limpar_tela()
-    pergunta3 = str(input(
-        "Escolha uma alternativa que melhor represente a GRUPO MINORITÁRIO: \n[A] Homem Branco, Mulher Negra, Homem Negro, LGBTQIA+.\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n[C] Mulheres, Heterosexual, Deficiente, LGBTQIA+.\n[D] Homem Branco, Heterosexual, Deficiente, LGBTQIA+.\nEscolha  uma  alternativa:")).upper()
+    pergunta3 = str(input("Escolha uma alternativa que melhor represente o GRUPO MINORITÁRIO: \n[A] Homem Branco, Mulher Negra, Homem Negro, LGBTQIA+.\n[B] Mulheres, Homem Negro, Deficientes, LGBTQIA+.\n[C] Mulheres, Heterosexual, Deficientes, LGBTQIA+.\n[D] Homem Branco, Heterosexual, Deficientes, LGBTQIA+.\nEscolha  uma  alternativa:")).upper()
     if pergunta3 == "A":
         limpar_tela()
         print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n')
     elif pergunta3 == "B":
         limpar_tela()
-        minoritario_pontos += 10
-        print(f'Você ACERTOU!\nO seu placar é de {minoritario_pontos} pontos.')
+        print(f'Você ACERTOU!\n')
     elif pergunta3 == "C":
         limpar_tela()
         print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n')
@@ -748,15 +721,14 @@ def quiz_grupo_minoritario():
         while True:
             limpar_tela()
             print(f'A opção {pergunta3} não exite. Tente novamente.\n')
-            pergunta3 = str(input("Escolha uma alternativa que melhor represente a GRUPO MINORITÁRIO: \n[A] Homem Branco, Mulher Negra, Homem Negro, LGBTQIA+.\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n[C] Mulheres, Heterosexual, Deficiente, LGBTQIA+.\n[D] Homem Branco, Heterosexual, Deficiente, LGBTQIA+.\nEscolha  uma  alternativa:")).upper()
+            pergunta3 = str(input("Escolha uma alternativa que melhor represente o GRUPO MINORITÁRIO: \n[A] Homem Branco, Mulher Negra, Homem Negro, LGBTQIA+.\n[B] Mulheres, Homem Negro, Deficientes, LGBTQIA+.\n[C] Mulheres, Heterosexual, Deficientes, LGBTQIA+.\n[D] Homem Branco, Heterosexual, Deficientes, LGBTQIA+.\nEscolha  uma  alternativa:")).upper()
             if pergunta3 == "A":
                 limpar_tela()
                 print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n')
                 break
             elif pergunta3 == "B":
                 limpar_tela()
-                minoritario_pontos += 10
-                print(f'Você ACERTOU!\nO seu placar é de {minoritario_pontos} pontos.')
+                print(f'Você ACERTOU!\n')
                 break
             elif pergunta3 == "C":
                 limpar_tela()
@@ -772,7 +744,6 @@ def quiz_grupo_minoritario():
 
 
 def quiz_estrutura_opressoes():
-    opressoes_pontos = 0
     limpar_tela()
     pergunta4 = str(input("Escolha uma alternativa incorreta sobre o tema  ESTRUTURA DE OPRESSÕES: \n[A] Mulheres são atingidas pelo machismo.\n[B] A comunidade LGBTQIA+ é atingida pela Homofobia e Transfobia.\n[C] Não existe estrutura de opressão.\n[D] A comunidade negra é atingida pelo racismo.\nEscolha  uma  alternativa:")).upper()
     if pergunta4 == "A":
@@ -783,8 +754,7 @@ def quiz_estrutura_opressoes():
         print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[C] Não existe estrutura de opressão.\n')
     elif pergunta4 == "C":
         limpar_tela()
-        opressoes_pontos += 10
-        print(f'Você ACERTOU!\nO seu placar é de {opressoes_pontos} pontos.')
+        print(f'Você ACERTOU!\n')
     elif pergunta4 == "D":
         limpar_tela()
         print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[C] Não existe estrutura de opressão.\n')
@@ -806,8 +776,7 @@ def quiz_estrutura_opressoes():
                 break
             elif pergunta4 == "C":
                 limpar_tela()
-                opressoes_pontos += 10
-                print(f'Você ACERTOU!\nO seu placar é de {opressoes_pontos} pontos.')
+                print(f'Você ACERTOU!\n')
                 break
             elif pergunta4 == "D":
                 limpar_tela()
@@ -819,14 +788,12 @@ def quiz_estrutura_opressoes():
 
 
 def quiz_gp_homogeneos():
-    homogeneos_pontos = 0
     limpar_tela()
     pergunta5 = str(input(
         "Escolha uma alternativa incorreta sobre o tema  GRUPO HOMOGÊNEO: \n[A] Pessoas deste grupo possuem crenças diferentes.\n[B] Pessoas deste grupo são da mesma origem.\n[C] Pessoas deste grupo possuem a mesma formação educacional.\n[D] Pessoas deste grupo possuem estrutura familiar parecida.\nEscolha  uma  alternativa:")).upper()
     if pergunta5 == "A":
         limpar_tela()
-        homogeneos_pontos += 10
-        print(f'Você ACERTOU!\nO seu placar é de {homogeneos_pontos} pontos.')
+        print(f'Você ACERTOU!\n')
     elif pergunta5 == "B":
         limpar_tela()
         print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[A] Pessoas deste grupo possuem crenças diferentes.\n')
@@ -847,8 +814,7 @@ def quiz_gp_homogeneos():
                 "Escolha uma alternativa incorreta sobre o tema  GRUPO HOMOGÊNEO: \n[A] Pessoas deste grupo possuem crenças diferentes.\n[B] Pessoas deste grupo são da mesma origem.\n[C] Pessoas deste grupo possuem a mesma formação educacional.\n[D] Pessoas deste grupo possuem estrutura familiar parecida.\nEscolha  uma  alternativa:")).upper()
             if pergunta5 == "A":
                 limpar_tela()
-                homogeneos_pontos += 10
-                print(f'Você ACERTOU!\nO seu placar é de {homogeneos_pontos} pontos.')
+                print(f'Você ACERTOU!\n')
                 break
             elif pergunta5 == "B":
                 limpar_tela()
@@ -868,7 +834,6 @@ def quiz_gp_homogeneos():
 
 
 def quiz_gp_heterogeneos():
-    heterogeneos_pontos = 0
     limpar_tela()
     pergunta6 = str(input(
         "Escolha uma alternativa incorreta sobre o tema  GRUPO HETEROGÊNEO: \n[A] Pessoas deste grupo possuem crenças diferentes.\n[B] Pessoas deste grupo são de origem diferentes.\n[C] Pessoas deste grupo possuem a mesma formação educacional.\n[D] Pessoas deste grupo possuem estrutura familiar diferentes.\nEscolha  uma  alternativa:")).upper()
@@ -880,8 +845,7 @@ def quiz_gp_heterogeneos():
         print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[C] Pessoas deste grupo possuem a mesma formação educacional.\n')
     elif pergunta6 == "C":
         limpar_tela()
-        heterogeneos_pontos += 10
-        print(f'Você ACERTOU!\nO seu placar é de {heterogeneos_pontos} pontos.')
+        print(f'Você ACERTOU!\n')
     elif pergunta6 == "D":
         limpar_tela()
         print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[C] Pessoas deste grupo possuem a mesma formação educacional.\n')
@@ -905,8 +869,7 @@ def quiz_gp_heterogeneos():
                 break
             elif pergunta6 == "C":
                 limpar_tela()
-                heterogeneos_pontos += 10
-                print(f'Você ACERTOU!\nO seu placar é de {heterogeneos_pontos} pontos.')
+                print(f'Você ACERTOU!\n')
                 break
             elif pergunta6 == "D":
                 limpar_tela()
@@ -918,13 +881,12 @@ def quiz_gp_heterogeneos():
 
 
 def quiz_resultado_diversidade():
-    result_diversidade_pontos = 0
     limpar_tela()
     pergunta7 = str(input(
         "Escolha uma alternativa correta sobre o tema  RESULTADO DA DIVERSIDADE NAS ORGANIZAÇÕES: \n[A] Uma Organição empresarial não precisa de Diversidade  para atingir melhores resultados.\n[B] A Diversidade não é um diferencial competitivo entre organizações empresariais.\n[C] Organizações empresariais que não possuem Diversidade atingem melhores resultados.\n[D] Diversidade esta  relacionada à sobrevivência e ao crescimento de organizações empresariais.\nEscolha  uma  alternativa:")).upper()
     if pergunta7 == "A":
         limpar_tela()
-        print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Diversidade esta relacionada à sobrevivência e ao crescimento de organizações empresariais..\n')
+        print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Diversidade esta relacionada à sobrevivência e ao crescimento de organizações empresariais.\n')
     elif pergunta7 == "B":
         limpar_tela()
         print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Diversidade esta relacionada à sobrevivência e ao crescimento de organizações empresariais.\n')
@@ -933,8 +895,7 @@ def quiz_resultado_diversidade():
         print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Diversidade esta relacionada à sobrevivência e ao crescimento de organizações empresariais.\n')
     elif pergunta7 == "D":
         limpar_tela()
-        result_diversidade_pontos += 10
-        print(f'Você ACERTOU!\nO seu placar é de {result_diversidade_pontos} pontos.')
+        print(f'Você ACERTOU!\n')
 
     #  Caso o usuário informe uma opção que não existe , o programa irá solicita a inserção até que ele informe uma opção existente
 
@@ -946,27 +907,25 @@ def quiz_resultado_diversidade():
                 "Escolha uma alternativa correta sobre o tema  RESULTADO DA DIVERSIDADE NAS ORGANIZAÇÕES: \n[A] Uma Organição empresarial não precisa de Diversidade  para atingir melhores resultados.\n[B] A Diversidade não é um diferencial competitivo entre organizações empresariais.\n[C] Organizações empresariais que não possuem Diversidade atingem melhores resultados.\n[D] Diversidade esta  relacionada à sobrevivência e ao crescimento de organizações empresariais.\nEscolha  uma  alternativa:")).upper()
             if pergunta7 == "A":
                 limpar_tela()
-                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Diversidade esta relacionada à sobrevivência e ao crescimento de organizações empresariais..\n')
+                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Diversidade esta relacionada à sobrevivência e ao crescimento de organizações empresariais.\n')
                 break
             elif pergunta7 == "B":
                 limpar_tela()
-                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Diversidade esta relacionada à sobrevivência e ao crescimento de organizações empresariais..\n')
+                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Diversidade esta relacionada à sobrevivência e ao crescimento de organizações empresariais.\n')
                 break
             elif pergunta7 == "C":
                 limpar_tela()
-                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Diversidade esta relacionada à sobrevivência e ao crescimento de organizações empresariais..\n')
+                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Diversidade esta relacionada à sobrevivência e ao crescimento de organizações empresariais.\n')
                 break
             elif pergunta7 == "D":
                 limpar_tela()
-                result_diversidade_pontos += 10
-                print(f'Você ACERTOU!\nO seu placar é de {result_diversidade_pontos} pontos.')
+                print(f'Você ACERTOU!\n')
                 break
 
 
 #  Quiz do tema AMBIENTE DIVERSO NAS ORGANIZAÇÕES
 
 def quiz_ambiente_diverso():
-    ambiente_diverso_pontos = 0
     limpar_tela()
     pergunta8 = str(input(
         "Escolha uma alternativa correta sobre o tema  AMBIENTE DIVERSO NAS ORGANIZAÇÕES: \n[A] A contratação de pessoas diversas não precisa da parceria do RH e Gestores.\n[B] A Diversidade dentro das Organizações empresariais impactam a sociedade.\n[C] Organizações empresariais não precisam de Diversidade.\n[D] A sociedade não é impactada com a Diversidade dentro das organizações empresariais.\nEscolha  uma  alternativa:")).upper()
@@ -975,8 +934,7 @@ def quiz_ambiente_diverso():
         print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] A Diversidade dentro das Organizações empresariais impactam a sociedade.\n')
     elif pergunta8 == "B":
         limpar_tela()
-        ambiente_diverso_pontos += 10
-        print(f'Você ACERTOU!\nO seu placar é de {ambiente_diverso_pontos} pontos.')
+        print(f'Você ACERTOU!\n')
     elif pergunta8 == "C":
         limpar_tela()
         print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] A Diversidade dentro das Organizações empresariais impactam a sociedade.\n')
@@ -997,12 +955,10 @@ def quiz_ambiente_diverso():
                 break
             elif pergunta8 == "B":
                 limpar_tela()
-                ambiente_diverso_pontos += 10
-                print(f'Você ACERTOU!\nO seu placar é de {ambiente_diverso_pontos} pontos.')
+                print(f'Você ACERTOU!\n')
                 break
             elif pergunta8 == "C":
                 limpar_tela()
-                ambiente_diverso_pontos += 10
                 print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] A Diversidade dentro das Organizações empresariais impactam a sociedade.\n')
                 break
             elif pergunta8 == "D":
@@ -1013,33 +969,37 @@ def quiz_ambiente_diverso():
 
 def quiz_final():
 
-    print('QUIZ FINAL')
+    cabecalho_fase_tres()
 
-    texto_pontos = 'Parabéns,Você chegou na terceira fase, onde teremos um grande desafio com um QUIZ, com 10 perguntas.' + \
-                   '\n' + 'REGRAS:' + \
-                   '\n' + 'Para vencer neste QUIZ é preciso fazer 80 pontos, teremos' + \
-                   '\n' + '4 Perguntas PERIGOSAS, você pontuará 10 pontos se acertar e -80 pontos se errar. ' + \
-                   '\n' + '2 Perguntas OURO, você pontuará 80 pontos em cada, ou seja acertando uma delas, você vencerá o QUIZ.' + \
-                   '\n' + '4 Perguntas PRATA, você pontuará 10 pontos em cada resposta certa.'
+    # variáveis declaradas pois na segunda versão do programa a condição de vitória se dará através de uma regra de pontuação.
+
+    acertos = 0
+    acerto_prata = 20
+    erro_prata = 10
+    acerto_ouro = 200
+    erro_ouro = 10
+    acerto_perigosa = 10
+    erro_perigosa = 100
 
     # 01 Pergunta sobre  Diversidade
 
-    acertos = 0
-
     limpar_tela()
-    pergunta9 = str(input("- PERGUNTA PRATA - (Vale 10 PONTOS)\nEscolha uma alternativa incorreta sobre o tema  DIVERSIDADE: \n[A] Ao falar de diversidade estamos nos referindo ao direito dos grupos minoritários.\n[B] A Diversidade é um assunto que NÃO precisa ser debatido.\n[C] A Diversidade é um assunto que NÃO precisa ser debatido.\n[D] A Diversidade pode ser Física, Morais, Religosas, Culturais , Ideologicas.\nEscolha  uma  alternativa:")).upper()
+    pergunta9 = str(input("01 - PERGUNTA PRATA - \nEscolha uma alternativa incorreta sobre o tema  DIVERSIDADE: \n[A] Ao falar de diversidade estamos nos referindo ao direito dos grupos minoritários.\n[B] A Diversidade é um assunto que NÃO precisa ser debatido.\n[C] A Diversidade é um assunto que precisa ser debatido.\n[D] A Diversidade pode ser Física, Morais, Religosas, Culturais , Ideologicas.\nEscolha  uma  alternativa:")).upper()
     if pergunta9 == "A":
         limpar_tela()
+        acertos -= erro_prata
         print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[D] Física, Morais, Religosas, Culturais\n')
     elif pergunta9 == "B":
         limpar_tela()
-        acertos += 10
+        acertos += acerto_prata
         print(f'Você ACERTOU!\n')
     elif pergunta9 == "C":
         limpar_tela()
+        acertos -= erro_prata
         print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[D] Física, Morais, Religosas, Culturais\n')
     elif pergunta9 == "D":
         limpar_tela()
+        acertos -= erro_prata
         print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[D] Física, Morais, Religosas, Culturais\n')
 
     # Caso o usuário informe uma opção que não existe , o programa irá solicita a inserção até que ele informe uma opção existente
@@ -1048,47 +1008,55 @@ def quiz_final():
         while True:
             limpar_tela()
             print(f'A opção {pergunta9} não exite. Tente novamente.\n')
-            pergunta9 = str(input("- PERGUNTA PRATA - ( Vale 10 PONTOS )\nEscolha uma alternativa incorreta sobre o tema  DIVERSIDADE: \n[A] Ao falar de diversidade estamos nos referindo ao direito dos grupos minoritários\n[B] A Diversidade é um assunto que NÃO precisa ser debatido.\n[C] A Diversidade é um assunto que NÃO precisa ser debatido.\n[D] A Diversidade pode ser Física, Morais, Religosas, Culturais , Ideologicas.\nEscolha  uma  alternativa:")).upper()
+            pergunta9 = str(input("01 - PERGUNTA PRATA - \nEscolha uma alternativa incorreta sobre o tema  DIVERSIDADE: \n[A] Ao falar de diversidade estamos nos referindo ao direito dos grupos minoritários\n[B] A Diversidade é um assunto que NÃO precisa ser debatido.\n[C] A Diversidade é um assunto que  precisa ser debatido.\n[D] A Diversidade pode ser Física, Morais, Religosas, Culturais , Ideologicas.\nEscolha  uma  alternativa:")).upper()
             if pergunta9 == "A":
                 limpar_tela()
+                acertos -= erro_prata
                 print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[D] Física, Morais, Religosas, Culturais')
                 break
             elif pergunta9 == "B":
                 limpar_tela()
-                acertos += 10
+                acertos += acerto_prata
                 print(f'Você ACERTOU!\n')
                 break
             elif pergunta9 == "C":
                 limpar_tela()
+                acertos -= erro_prata
                 print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[D] Física, Morais, Religosas, Culturais')
                 break
             elif pergunta9 == "D":
                 limpar_tela()
+                acertos -= erro_prata
                 print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[D] Física, Morais, Religosas, Culturais')
                 break
 
-    print('-' * 30)
-    print(f'{f"SEU PLACAR É DE {acertos} PONTOS":^30}')
-    print('-' * 30)
+    cabecalho_fase_tres()
+
 
     # 02 Pergunta Equidade
 
     # limpar_tela()
-    pergunta10 = str(input("- PERGUNTA PRATA - ( Vale 10 PONTOS )\nEscolha uma alternativa correta sobre o tema  EQUIDADE:: \n[A] Equidade é dar oportunidades.\n[B] Desigualdade é o antônimo de equidade.\n[C] Equidade e igualdade são as mesmas coisas.\n[D] Equidade é adaptar as oportunidades  deixando-as justas.\nEscolha  uma  alternativa:")).upper()
+    pergunta10 = str(input("02 - PERGUNTA PERIGOSA - \nEscolha uma alternativa correta sobre o tema  EQUIDADE:: \n[A] Equidade é dar oportunidades.\n[B] Desigualdade é o antônimo de equidade.\n[C] Equidade e igualdade são as mesmas coisas.\n[D] Equidade é adaptar as oportunidades  deixando-as justas.\nEscolha  uma  alternativa:")).upper()
     if pergunta10 == "A":
         limpar_tela()
+        acertos -= erro_perigosa
         print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Equidade é adaptar as oportunidades  deixando-as justas.\n')
+        imprime_mensagem_perdedor()
     elif pergunta10 == "B":
         limpar_tela()
+        acertos -= acerto_perigosa
         print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Equidade é adaptar as oportunidades  deixando-as justas.\n')
+        imprime_mensagem_perdedor()
     elif pergunta10 == "C":
         limpar_tela()
-        print(
-            'Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Equidade é adaptar as oportunidades  deixando-as justas.\n')
+        acertos -= erro_perigosa
+        print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Equidade é adaptar as oportunidades  deixando-as justas.\n')
+        imprime_mensagem_perdedor()
     elif pergunta10 == "D":
         limpar_tela()
-        acertos += 10
+        acertos += erro_perigosa
         print(f'Você ACERTOU!\n')
+        imprime_mensagem_vencedor()
 
     #  Caso o usuário informe uma opção que não existe , o programa irá solicita a inserção até que ele informe uma opção existente
 
@@ -1096,46 +1064,51 @@ def quiz_final():
         while True:
             limpar_tela()
             print(f'A opção {pergunta10} não exite. Tente novamente.\n')
-            pergunta10 = str(input("- PERGUNTA PRATA - ( Vale 10 PONTOS )\nEscolha uma alternativa correta sobre o tema  EQUIDADE:: \n[A] Equidade é dar oportunidades.\n[B] Desigualdade é o antônimo de equidade.\n[C] Equidade e igualdade são as mesmas coisas.\n[D] Equidade é adaptar as oportunidades  deixando-as justas.\nEscolha  uma  alternativa:")).upper()
+            pergunta10 = str(input("02  - PERGUNTA PERIGOSA - \nEscolha uma alternativa correta sobre o tema  EQUIDADE:: \n[A] Equidade é dar oportunidades.\n[B] Desigualdade é o antônimo de equidade.\n[C] Equidade e igualdade são as mesmas coisas.\n[D] Equidade é adaptar as oportunidades  deixando-as justas.\nEscolha  uma  alternativa:")).upper()
             if pergunta10 == "A":
                 limpar_tela()
-                acertos += 10
-                print(f'Você ACERTOU!\n.')
+                acertos -= erro_perigosa
+                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Equidade é adaptar as oportunidades  deixando-as justas.\n')
+                imprime_mensagem_perdedor()
                 break
             elif pergunta10 == "B":
                 limpar_tela()
+                acertos -= erro_perigosa
                 print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Equidade é adaptar as oportunidades  deixando-as justas.\n')
+                imprime_mensagem_perdedor()
                 break
             elif pergunta10 == "C":
                 limpar_tela()
+                acertos -= erro_perigosa
                 print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Equidade é adaptar as oportunidades  deixando-as justas.\n')
+                imprime_mensagem_perdedor()
                 break
             elif pergunta10 == "D":
                 limpar_tela()
-                acertos += 10
+                acertos += acerto_perigosa
                 print(f'Você ACERTOU!\n')
+                imprime_mensagem_vencedor()
                 break
-
-    print('-' * 30)
-    print(f'{f"SEU PLACAR É DE {acertos} PONTOS":^30}')
-    print('-' * 30)
 
     # 03 Pergunta Grupos Minoritários
 
     # limpar_tela()
-    pergunta11 = str(input("- PERGUNTA PRATA - ( Vale 10 PONTOS )\n Escolha uma alternativa que melhor represente a GRUPO MINORITÁRIO: \n[A] Homem Branco, Mulher Negra, Homem Negro, LGBTQIA+.\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n[C] Mulheres, Heterosexual, Deficientes, LGBTQIA+.\n[D] Homem Branco, Heterosexual, Deficiente, LGBTQIA+.\nEscolha  uma  alternativa:")).upper()
+    pergunta11 = str(input("03 - PERGUNTA PRATA - \nEscolha uma alternativa que melhor represente a GRUPO MINORITÁRIO: \n[A] Homem Branco, Mulher Negra, Homem Negro, LGBTQIA+.\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n[C] Mulheres, Heterosexual, Deficientes, LGBTQIA+.\n[D] Homem Branco, Heterosexual, Deficiente, LGBTQIA+.\nEscolha  uma  alternativa:")).upper()
     if pergunta11 == "A":
         limpar_tela()
+        acertos -= erro_prata
         print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n')
     elif pergunta11 == "B":
         limpar_tela()
-        acertos += 10
+        acertos += acerto_prata
         print(f'Você ACERTOU!\n')
     elif pergunta11 == "C":
         limpar_tela()
+        acertos -= erro_prata
         print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n')
     elif pergunta11 == "D":
         limpar_tela()
+        acertos -= erro_prata
         print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n')
 
     #  Caso o usuário informe uma opção que não existe , o programa irá solicita a inserção até que ele informe uma opção existente
@@ -1144,46 +1117,405 @@ def quiz_final():
         while True:
             limpar_tela()
             print(f'A opção {pergunta11} não exite. Tente novamente.\n')
-            pergunta11 = str(input(
-                "Escolha uma alternativa que melhor represente a GRUPO MINORITÁRIO: \n[A] Homem Branco, Mulher Negra, Homem Negro, LGBTQIA+.\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n[C] Mulheres, Heterosexual, Deficiente, LGBTQIA+.\n[D] Homem Branco, Heterosexual, Deficiente, LGBTQIA+.\nEscolha  uma  alternativa:")).upper()
+            pergunta11 = str(input("03 - PERGUNTA PRATA - \nEscolha uma alternativa que melhor represente a GRUPO MINORITÁRIO: \n[A] Homem Branco, Mulher Negra, Homem Negro, LGBTQIA+.\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n[C] Mulheres, Heterosexual, Deficientes, LGBTQIA+.\n[D] Homem Branco, Heterosexual, Deficiente, LGBTQIA+.\nEscolha  uma  alternativa:")).upper()
             if pergunta11 == "A":
                 limpar_tela()
-                print(
-                    'Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n')
+                acertos -= erro_prata
+                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n')
                 break
             elif pergunta11 == "B":
                 limpar_tela()
-                acertos += 10
+                acertos += acerto_prata
                 print(f'Você ACERTOU!\n.')
                 break
             elif pergunta11 == "C":
                 limpar_tela()
-                print(
-                    'Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n')
+                acertos -= erro_prata
+                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n')
                 break
             elif pergunta11 == "D":
                 limpar_tela()
-                print(
-                    'Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n')
+                acertos -= erro_prata
+                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Mulheres, Homem Negro, Deficiente, LGBTQIA+.\n')
                 break
 
-    print('-' * 30)
-    print(f'{f"SEU PLACAR É DE {acertos} PONTOS":^30}')
-    print('-' * 30)
+    cabecalho_fase_tres()
 
     # 04 Pergunta Estrutura de Opressões
 
+    pergunta12 = str(input("04 - PERGUNTA PRATA - \nEscolha uma alternativa incorreta sobre o tema  ESTRUTURA DE OPRESSÕES: \n[A] A descontrução do processo da estrutura de opresão se da através da visibilidade do tema.\n[B] A descontrução do processo da estrutura de opresão se da através da representatividade do tema.\n[C] Não existe estrutura de opressão.\n[D] Todos somos responsáveis pelo combate da estrutura de opressão.\nEscolha  uma  alternativa:")).upper()
+    if pergunta12 == "A":
+        limpar_tela()
+        acertos -= erro_prata
+        print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[C] Não existe estrutura de opressão.\n')
+    elif pergunta12 == "B":
+        limpar_tela()
+        acertos -= erro_prata
+        print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[C] Não existe estrutura de opressão.\n')
+    elif pergunta12 == "C":
+        limpar_tela()
+        acertos += acerto_prata
+        print(f'Você ACERTOU!\n')
+    elif pergunta12 == "D":
+        limpar_tela()
+        acertos -= erro_prata
+        print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[C] Não existe estrutura de opressão.\n')
+
+    #  Caso o usuário informe uma opção que não existe , o programa irá solicita a inserção até que ele informe uma opção existente
+
+    elif pergunta12 != "ABCD":
+        while True:
+            limpar_tela()
+            print(f'A opção {pergunta12} não exite. Tente novamente.\n')
+            pergunta12 = str(input("04 - PERGUNTA PRATA - )\nEscolha uma alternativa incorreta sobre o tema  ESTRUTURA DE OPRESSÕES: \n[A] A descontrução do processo da estrutura de opresão se da através da visibilidade do tema.\n[B] A descontrução do processo da estrutura de opresão se da através da representatividade do tema.\n[C] Não existe estrutura de opressão.\n[D] Todos somos responsáveis pelo combate da estrutura de opressão.\nEscolha  uma  alternativa:")).upper()
+            if pergunta12 == "A":
+                limpar_tela()
+                acertos -= erro_prata
+                print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[C] Não existe estrutura de opressão.\n')
+                break
+            elif pergunta12 == "B":
+                limpar_tela()
+                acertos -= erro_prata
+                print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[C] Não existe estrutura de opressão.\n')
+                break
+            elif pergunta12 == "C":
+                limpar_tela()
+                acertos += acerto_prata
+                print(f'Você ACERTOU!\n.')
+                break
+            elif pergunta12 == "D":
+                limpar_tela()
+                acertos -= erro_prata
+                print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[C] Não existe estrutura de opressão.\n')
+                break
+
+    cabecalho_fase_tres()
+
     # 05 Pergunta Grupo Homogêneo
+
+    pergunta13 = str(input("05 - PERGUNTA PERIGOSA - \nEscolha uma alternativa incorreta sobre o tema  GRUPO HOMOGÊNEO: \n[A] Pessoas deste grupo possuem ideias diferentes.\n[B] Pessoas deste grupo são da mesma origem.\n[C] Pessoas deste grupo possuem a mesma formação educacional.\n[D] Pessoas deste grupo possuem estrutura familiar parecida.\nEscolha  uma  alternativa:")).upper()
+    if pergunta13 == "A":
+        limpar_tela()
+        acertos += acerto_perigosa
+        print(f'Você ACERTOU!\n')
+        imprime_mensagem_vencedor()
+    elif pergunta13 == "B":
+        limpar_tela()
+        acertos -= erro_perigosa
+        print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[A] Pessoas deste grupo possuem ideias diferentes.\n')
+        imprime_mensagem_perdedor()
+    elif pergunta13 == "C":
+        limpar_tela()
+        acertos -= erro_perigosa
+        print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[A] Pessoas deste grupo possuem ideias diferentes.\n')
+        imprime_mensagem_perdedor()
+    elif pergunta13 == "D":
+        limpar_tela()
+        acertos -= erro_perigosa
+        print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[A] Pessoas deste grupo possuem ideias diferentes.\n')
+        imprime_mensagem_perdedor()
+
+    #  Caso o usuário informe uma opção que não existe , o programa irá solicita a inserção até que ele informe uma opção existente
+
+    elif pergunta13 != "ABCD":
+        while True:
+            limpar_tela()
+            print(f'A opção {pergunta13} não exite. Tente novamente.\n')
+            pergunta13 = str(input("05 - PERGUNTA PERIGOSA - \nEscolha uma alternativa incorreta sobre o tema  GRUPO HOMOGÊNEO: \n[A] Pessoas deste grupo possuem ideias diferentes.\n[B] Pessoas deste grupo são da mesma origem.\n[C] Pessoas deste grupo possuem a mesma formação educacional.\n[D] Pessoas deste grupo possuem estrutura familiar parecida.\nEscolha  uma  alternativa:")).upper()
+            if pergunta13 == "A":
+                limpar_tela()
+                acertos += acerto_perigosa
+                print(f'Você ACERTOU!\n.')
+                imprime_mensagem_vencedor()
+                break
+            elif pergunta13 == "B":
+                limpar_tela()
+                acertos -= erro_perigosa
+                print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[A] Pessoas deste grupo possuem ideias diferentes.\n')
+                imprime_mensagem_perdedor()
+                break
+            elif pergunta13 == "C":
+                limpar_tela()
+                acertos -= erro_perigosa
+                print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[A] Pessoas deste grupo possuem ideias diferentes.\n')
+                imprime_mensagem_perdedor()
+                break
+            elif pergunta13 == "D":
+                limpar_tela()
+                acertos -= erro_perigosa
+                print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[A] Pessoas deste grupo possuem ideias diferentes.\n')
+                imprime_mensagem_perdedor()
+                break
+
 
     # 06 Pergunta Grupo Heterogêneo
 
+    pergunta14 = str(input("06 - PERGUNTA PRATA - \nEscolha uma alternativa incorreta sobre o tema  GRUPO HETEROGÊNEO: \n[A] Pessoas deste grupo possuem crenças diferentes.\n[B] Pessoas deste grupo são de origem diferentes.\n[C] Pessoas deste grupo possuem a mesma crença.\n[D] Pessoas deste grupo possuem estrutura familiar diferentes.\nEscolha  uma  alternativa:")).upper()
+    if pergunta14 == "A":
+        limpar_tela()
+        acertos -= erro_prata
+        print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[C] Pessoas deste grupo possuem a mesma crença.\n')
+    elif pergunta14 == "B":
+        limpar_tela()
+        acertos -= erro_prata
+        print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[C] Pessoas deste grupo possuem a mesma crença.\n')
+    elif pergunta14 == "C":
+        limpar_tela()
+        acertos += acerto_prata
+        print(f'Você ACERTOU!\n.')
+    elif pergunta14 == "D":
+        limpar_tela()
+        acertos -= erro_prata
+        print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[C] Pessoas deste grupo possuem a mesma crença.\n')
+
+    #  Caso o usuário informe uma opção que não existe , o programa irá solicita a inserção até que ele informe uma opção existente
+
+    elif pergunta14 != "ABCD":
+        while True:
+            limpar_tela()
+            print(f'A opção {pergunta14} não exite. Tente novamente.\n')
+            pergunta14 = str(input("06 - PERGUNTA PRATA - \nEscolha uma alternativa incorreta sobre o tema  GRUPO HETEROGÊNEO: \n[A] Pessoas deste grupo possuem crenças diferentes.\n[B] Pessoas deste grupo são de origem diferentes.\n[C] Pessoas deste grupo possuem a mesma crença.\n[D] Pessoas deste grupo possuem estrutura familiar diferentes.\nEscolha  uma  alternativa:")).upper()
+            if pergunta14 == "A":
+                limpar_tela()
+                acertos -= erro_prata
+                print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[C] Pessoas deste grupo possuem a mesma crença.\n')
+                break
+            elif pergunta14 == "B":
+                limpar_tela()
+                acertos -= erro_prata
+                print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[C] Pessoas deste grupo possuem a mesma crença.\n')
+                break
+            elif pergunta14 == "C":
+                limpar_tela()
+                acertos += acerto_prata
+                print(f'Você ACERTOU!\n.')
+                break
+            elif pergunta14 == "D":
+                limpar_tela()
+                acertos -= erro_prata
+                print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[C] Pessoas deste grupo possuem a mesma crença.\n')
+                break
+
+    cabecalho_fase_tres()
+
     # 07 Pergunta Resultado de Diversidade nas organizações
+
+    pergunta15 = str(input("07 - PERGUNTA PERIGOSA - \nEscolha uma alternativa correta sobre o tema  RESULTADO DA DIVERSIDADE NAS ORGANIZAÇÕES: \n[A] Os melhores resultados de um organização empresarial não esta relacionado a diversidade.\n[B] A Diversidade NÃO é um diferencial competitivo entre organizações empresariais.\n[C] Organizações empresariais que não possuem Diversidade atingem melhores resultados.\n[D] Diversidade traz crescimento e melhores resultados para organizações empresariais.\nEscolha  uma  alternativa:")).upper()
+    if pergunta15 == "A":
+        limpar_tela()
+        acertos -= erro_perigosa
+        print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Diversidade traz crescimento e melhores resultados para organizações empresariais.\n')
+        imprime_mensagem_perdedor()
+    elif pergunta15 == "B":
+        limpar_tela()
+        acertos -= erro_perigosa
+        print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Diversidade traz crescimento e melhores resultados para organizações empresariais.\n')
+        imprime_mensagem_perdedor()
+    elif pergunta15 == "C":
+        limpar_tela()
+        acertos -= erro_perigosa
+        print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Diversidade traz crescimento e melhores resultados para organizações empresariais.\n')
+        imprime_mensagem_perdedor()
+    elif pergunta15 == "D":
+        limpar_tela()
+        acertos += acerto_perigosa
+        print(f'Você ACERTOU!\n')
+        imprime_mensagem_vencedor()
+
+    #  Caso o usuário informe uma opção que não existe , o programa irá solicita a inserção até que ele informe uma opção existente
+
+    elif pergunta15 != "ABCD":
+        while True:
+            limpar_tela()
+            print(f'A opção {pergunta15} não exite. Tente novamente.\n')
+            pergunta15 = str(input("07 - PERGUNTA PERIGOSA - \nEscolha uma alternativa correta sobre o tema  RESULTADO DA DIVERSIDADE NAS ORGANIZAÇÕES: \n[A] Os melhores resultados de um organização empresarial não esta relacionado a diversidade.\n[B] A Diversidade NÃO é um diferencial competitivo entre organizações empresariais.\n[C] Organizações empresariais que não possuem Diversidade atingem melhores resultados.\n[D] Diversidade traz crescimento e melhores resultados para organizações empresariais.\nEscolha  uma  alternativa:")).upper()
+            if pergunta15 == "A":
+                limpar_tela()
+                acertos -= erro_perigosa
+                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Diversidade traz crescimento e melhores resultados para organizações empresariais.\n')
+                imprime_mensagem_perdedor()
+                break
+            elif pergunta15 == "B":
+                limpar_tela()
+                acertos -= erro_perigosa
+                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Diversidade traz crescimento e melhores resultados para organizações empresariais.\n')
+                imprime_mensagem_perdedor()
+                break
+            elif pergunta15 == "C":
+                limpar_tela()
+                acertos -= erro_perigosa
+                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[D] Diversidade traz crescimento e melhores resultados para organizações empresariais.\n')
+                imprime_mensagem_perdedor()
+                break
+            elif pergunta15 == "D":
+                limpar_tela()
+                acertos += acerto_perigosa
+                print(f'Você ACERTOU!\n')
+                imprime_mensagem_vencedor()
+                break
 
     # 08 Pergunta Ambiente Diverso
 
+    pergunta16 = str(input("08 - PERGUNTA PERIGOSA - \nEscolha uma alternativa correta sobre o tema  AMBIENTE DIVERSO NAS ORGANIZAÇÕES: \n[A] A contratação de pessoas diversas não precisa da parceria do RH e Gestores.\n[B] A Diversidade dentro das Organizações empresariais impactam a sociedade.\n[C] Organizações empresariais não precisam de Diversidade.\n[D] A sociedade não é impactada com a Diversidade dentro das organizações empresariais.\nEscolha  uma  alternativa:")).upper()
+    if pergunta16 == "A":
+        limpar_tela()
+        acertos -= erro_perigosa
+        print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] A Diversidade dentro das Organizações empresariais impactam a sociedade.\n')
+        imprime_mensagem_perdedor()
+    elif pergunta16 == "B":
+        limpar_tela()
+        acertos += acerto_perigosa
+        print(f'Você ACERTOU!\n')
+        imprime_mensagem_vencedor()
+    elif pergunta16 == "C":
+        limpar_tela()
+        acertos -= erro_perigosa
+        print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] A Diversidade dentro das Organizações empresariais impactam a sociedade.\n')
+        imprime_mensagem_perdedor()
+    elif pergunta16 == "D":
+        limpar_tela()
+        acertos -= erro_perigosa
+        print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] A Diversidade dentro das Organizações empresariais impactam a sociedade.\n')
+        imprime_mensagem_perdedor()
+
+    #  Caso o usuário informe uma opção que não existe , o programa irá solicita a inserção até que ele informe uma opção existente
+
+    elif pergunta16 != "ABCD":
+        while True:
+            limpar_tela()
+            print(f'A opção {pergunta16} não exite. Tente novamente.\n')
+            pergunta16 = str(input("08 - PERGUNTA PERIGOSA - \nEscolha uma alternativa correta sobre o tema  AMBIENTE DIVERSO NAS ORGANIZAÇÕES: \n[A] A contratação de pessoas diversas não precisa da parceria do RH e Gestores.\n[B] A Diversidade dentro das Organizações empresariais impactam a sociedade.\n[C] Organizações empresariais não precisam de Diversidade.\n[D] A sociedade não é impactada com a Diversidade dentro das organizações empresariais.\nEscolha  uma  alternativa:")).upper()
+            if pergunta16 == "A":
+                limpar_tela()
+                acertos -= erro_perigosa
+                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] A Diversidade dentro das Organizações empresariais impactam a sociedade.\n')
+                imprime_mensagem_perdedor()
+                break
+            elif pergunta16 == "B":
+                limpar_tela()
+                acertos += acerto_perigosa
+                print(f'Você ACERTOU!\n.')
+                imprime_mensagem_vencedor()
+                break
+            elif pergunta16 == "C":
+                limpar_tela()
+                acertos -= erro_perigosa
+                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] A Diversidade dentro das Organizações empresariais impactam a sociedade.\n')
+                imprime_mensagem_perdedor()
+                break
+            elif pergunta16 == "D":
+                limpar_tela()
+                acertos -= erro_perigosa
+                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] A Diversidade dentro das Organizações empresariais impactam a sociedade.\n')
+                imprime_mensagem_perdedor()
+                break
+
+
     # 09 Pergunta Ambiente Diverso programas de inclusão de diversidade ( Trainee Magalu, Empretece, VamoAI, PROA, Reprograma)
 
+    pergunta16 = str(input("09 - PERGUNTA PRATA - \nEmpresas como Ifood  tem um grande sonho e vontade de promover mudanças e impactar\n"
+                           "a sociedade, gerando oportunidade por meio da educação e promovendo programas de inclusão de grupos minoritários\n"
+                           "em sua organização, assinale a alternativa de um  programa que não tem  relação com o Ifood:\n[A] VamoAi | Programa de formação de Backend focado  em Dados.\n[B] PrograMARIA - emponderar mulheres no meio da tecnologia.\n[C] PROA | Curso de Educação Profissionalizante em parceria com o Instituto Proa.\n[D] REPROGRAMA | Capacitação para programadoras mulheres.\nEscolha  uma  alternativa:")).upper()
+    if pergunta16 == "A":
+        limpar_tela()
+        acertos -= erro_ouro
+        print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[B] PrograMARIA - emponderar mulheres no meio da tecnologia\n')
+    elif pergunta16 == "B":
+        limpar_tela()
+        acertos += acerto_ouro
+        print(f'Você ACERTOU!\n')
+    elif pergunta16 == "C":
+        limpar_tela()
+        acertos -= erro_ouro
+        print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[B] PrograMARIA - emponderar mulheres no meio da tecnologia\n')
+    elif pergunta16 == "D":
+        limpar_tela()
+        acertos -= erro_ouro
+        print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[B] PrograMARIA - emponderar mulheres no meio da tecnologia\n')
+
+    #  Caso o usuário informe uma opção que não existe , o programa irá solicita a inserção até que ele informe uma opção existente
+
+    elif pergunta16 != "ABCD":
+        while True:
+            limpar_tela()
+            print(f'A opção {pergunta16} não exite. Tente novamente.\n')
+            pergunta16 = str(input("09 - PERGUNTA PRATA - \nEmpresas como Ifood  tem um grande sonho e vontade de promover mudanças e impactar\n"
+                                   "a sociedade, gerando oportunidade por meio da educação e promovendo programas de inclusão de grupos minoritários\n"
+                                   "em sua organização, assinale a alternativa de um programa que não tem  relação com o Ifood:\n[A] VamoAi | Programa de formação de Backend focado  em Dados.\n[B] PrograMARIA - emponderar mulheres no meio da tecnologia.\n[C] PROA | Curso de Educação Profissionalizante em parceria com o Instituto Proa.\n[D] REPROGRAMA | Capacitação para programadoras mulheres.\nEscolha  uma  alternativa:")).upper()
+            if pergunta16 == "A":
+                limpar_tela()
+                acertos -= erro_ouro
+                print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[B] PrograMARIA - emponderar mulheres no meio da tecnologia\n')
+                break
+            elif pergunta16 == "B":
+                limpar_tela()
+                acertos += acerto_ouro
+                print(f'Você ACERTOU!\n.')
+                imprime_mensagem_vencedor()
+                break
+            elif pergunta16 == "C":
+                limpar_tela()
+                acertos -= erro_ouro
+                print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[B] PrograMARIA - emponderar mulheres no meio da tecnologia\n')
+                break
+            elif pergunta16 == "D":
+                limpar_tela()
+                acertos -= erro_ouro
+                print('Poxaaaa, Foi quase !\nA alternativa incorreta é a:\n[B] PrograMARIA - emponderar mulheres no meio da tecnologia\n')
+                break
+
+    cabecalho_fase_tres()
+
     # 10 Pergunta Ambiente Diverso ( Detalhar sobre os programas Empretece, VamoAI, PROA, Reprograma)
+
+    pergunta16 = str(input("10 - PERGUNTA PRATA - \nQual o nome do programa de contratação exclusivo para pessoas negras do Grupo Movile no qual o Ifood faz parte:\n[A] Trainee para pessoas negras.\n[B] Empretece - Programa para pessoas negras.\n[C] Nós codamos -  inclusão da comunidade negra.\n[D] Protagonismo Preto - programa para pessoas negras.\nEscolha  uma  alternativa:")).upper()
+    if pergunta16 == "A":
+        limpar_tela()
+        acertos -= erro_ouro
+        print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Empretece - Programa para pessoas negras.\n')
+    elif pergunta16 == "B":
+        limpar_tela()
+        acertos += acerto_ouro
+        print(f'Você ACERTOU!\n')
+        imprime_mensagem_vencedor()
+    elif pergunta16 == "C":
+        limpar_tela()
+        acertos -= erro_ouro
+        print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Empretece - Programa para pessoas negras.\n')
+    elif pergunta16 == "D":
+        limpar_tela()
+        acertos -= erro_ouro
+        print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Empretece - Programa para pessoas negras.\n')
+
+    #  Caso o usuário informe uma opção que não existe , o programa irá solicita a inserção até que ele informe uma opção existente
+
+    elif pergunta16 != "ABCD":
+        while True:
+            limpar_tela()
+            print(f'A opção {pergunta16} não exite. Tente novamente.\n')
+            pergunta16 = str(input("10 - PERGUNTA PRATA - \nQual o nome do programa de contratação exclusivo para pessoas negras do Grupo Movile no qual o Ifood faz parte.  .\n[A] Trainee para pessoas negras.\n[B] Empretece - Programa para pessoas negras.\n[C] Nós codamos -  inclusão da comunidade negra.\n[D] Protagonismo Preto - programa para pessoas negras.\nEscolha  uma  alternativa:")).upper()
+            if pergunta16 == "A":
+                limpar_tela()
+                acertos -= erro_ouro
+                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Empretece - Programa para pessoas negras.\n')
+                break
+            elif pergunta16 == "B":
+                limpar_tela()
+                acertos += acerto_ouro
+                print(f'Você ACERTOU!\n.')
+                break
+            elif pergunta16 == "C":
+                limpar_tela()
+                acertos -= erro_ouro
+                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Empretece - Programa para pessoas negras.\n')
+                break
+            elif pergunta16 == "D":
+                limpar_tela()
+                acertos -= erro_ouro
+                print('Poxaaaa, Foi quase !\nA alternativa correta é a:\n[B] Empretece - Programa para pessoas negras.\n')
+                break
+
+    continuar_jogo()
 
 
 cabecalho_programa()
