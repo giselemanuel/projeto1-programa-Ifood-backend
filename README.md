@@ -1,9 +1,9 @@
 
-#<center>🌈 DIVERSIDADE 🌈</center>
+# <center> 🌈 DIVERSIDADE 🌈 </center>
 
 > Título: E-learning - Diversidade nas Organizåções Empresariais
 ---
-####Descrição do Jogo  📖 
+## Descrição do Jogo  📖 
 
 A proposta deste e-learning é apresentar o tema Diversidade nas Organizações Empresariais.
 Falaremos dos conceitos sobre equidade, grupos minoritários, estruturas de opressões, 
@@ -12,13 +12,13 @@ desempenho das organizações empresariais e seus impactos na sociedade. Todo co
 conta com um QUIZ para que essa jornada de conhecimento sobre o mundo da diversidade 
 fique ainda mais interessante.
 
-###Personagens 👤
+### Personagens 👤
 
 - Denise
 - Gabriela
 - Paulo
 
-###Fase do Jogo 📍  
+### Fase do Jogo 📍  
 
 * Introdução de conceitos
     - Diversidade
