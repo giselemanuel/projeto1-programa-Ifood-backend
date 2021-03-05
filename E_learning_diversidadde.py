@@ -17,7 +17,7 @@ from time import sleep
 def limpar_tela():
     if os.name == 'nt':  # limpa tela para sistemas windows
         os.system("cls")
-    else:
+    else:                  # limpa tela linux e mac
         os.system("clear")
 
 
