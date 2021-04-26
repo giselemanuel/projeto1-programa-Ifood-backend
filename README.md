@@ -1,5 +1,5 @@
 
-# <center> 🌈 DIVERSIDADE 🌈 </center>
+# <center> 🌈 DIVERSIDADE NAS ORGANIZAÇÕES EMPRESARIAIS 🌈 </center>
 
 > Título: E-learning - Diversidade nas Organizåções Empresariais
 ---
