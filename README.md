@@ -45,7 +45,7 @@ O jogador ao responder uma das perguntas Perigosas corretamente, vence o jogo.
 
 
 ### Condição de Derrota 👻
-O jogador ao responder uma das perguntas Perigosas incorretamtente, perde o jogo.
+O jogador ao responder uma das perguntas Perigosas incorretamtente, ele perde o jogo.
 
         
 
